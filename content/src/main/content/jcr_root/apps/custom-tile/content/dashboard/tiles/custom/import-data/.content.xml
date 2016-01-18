@@ -55,7 +55,7 @@
                     <container
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/foundation/container"
-                        class="cq-apps-MobileServices-form-body">
+                        class="cq-apps-UploadData-form-body">
                         <layout
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="granite/ui/components/foundation/layouts/container"/>
@@ -64,7 +64,7 @@
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/text"
                                 class="cq-apps--block-text"
-                                text="Upload a AMS Configuration file to associate to your mobile application."/>
+                                text="Upload a CSV file for your mobile application."/>
                             <fileupload
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/foundation/form/fileupload"
@@ -73,18 +73,18 @@
                                 icon="icon-upload"
                                 mimeTypes="[application/json]"
                                 multiple="{Boolean}false"
-                                name="adbmobileconfig"
-                                rel="cq-apps-MobileServices-upload-activator"
+                                name="articledata"
+                                rel="cq-apps-UploadData-upload-activator"
                                 show-progress="{Boolean}true"
                                 sizeLimit="2147483648"
                                 text="Upload AMS SDK Config"
-                                title="Upload Adobe Mobile Services Application Config"
+                                title="Upload Product Data"
                                 uploadUrl="will_be_replaced"
                                 useHTML5="{Boolean}true"
                                 variant="[secondary,block]">
                                 <events
                                     jcr:primaryType="nt:unstructured"
-                                    fileselected="CQ.Apps.AppMetrics.Modal.FileUpload.fileselected"/>
+                                    fileselected="CQ.Apps.UploadData.Modal.FileUpload.fileselected"/>
                             </fileupload>
                         </items>
                     </container>
@@ -99,7 +99,7 @@
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/foundation/form/submit"
                         disabled="{Boolean}true"
-                        formId="displayAMSUploadModal"
+                        formId="displayCSVUploadModal"
                         text="Upload"
                         variant="primary"/>
                 </footer>
