@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
     jcr:primaryType="sling:OrderedFolder"
-    tiles="[/libs/mobileapps/admin/content/dashboard/tiles/default/info,/libs/mobileapps/admin/content/dashboard/tiles/default/appmetrics,/libs/mobileapps/admin/content/dashboard/tiles/default/content,/libs/mobileapps/admin/content/dashboard/tiles/default/updatepackages,/libs/mobileapps/admin/content/dashboard/tiles/default/pushnotifications,/libs/mobileapps/admin/content/dashboard/tiles/default/pgbuild,/libs/mobileapps/admin/content/dashboard/tiles/default/cloudservices]">
+    tiles="[/libs/mobileapps/dps/admin/content/dashboard/tiles/dpsdefault/banners,/libs/mobileapps/dps/admin/content/dashboard/tiles/dpsdefault/connection,/libs/mobileapps/dps/admin/content/dashboard/tiles/dpsdefault/info,/libs/mobileapps/dps/admin/content/dashboard/tiles/dpsdefault/articles,/libs/mobileapps/dps/admin/content/dashboard/tiles/dpsdefault/collections]">
     <import-data/>
 </jcr:root>
