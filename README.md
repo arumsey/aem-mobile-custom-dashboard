@@ -21,6 +21,11 @@ core mobileapps resourceType provides a convenient way to alter existing dashboa
 
 ### App Details Dialog
 
+### App Template
+
+The [app template](content/jcr_root/apps/planetrumsey/mobileapps/templates/app-hybrid-custom) will allow any new app that is created to
+automatically obtain any desired dashboard customizations.
+
 
 ## Dashboard Configuration
 
