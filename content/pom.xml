@@ -5,16 +5,16 @@
     <!-- P A R E N T P R O J E C T D E S C R I P T I O N -->
     <!-- ====================================================================== -->
     <parent>
-        <groupId>arumsey.mobileapps</groupId>
-        <artifactId>custom-tile-reactor</artifactId>
+        <groupId>ca.planetrumsey.mobileapps</groupId>
+        <artifactId>custom-dashboard-reactor</artifactId>
         <version>1.0-SNAPSHOT</version>
         <relativePath>../</relativePath>
     </parent>
 
-    <artifactId>custom-tile-content</artifactId>
+    <artifactId>custom-dashboard-content</artifactId>
     <packaging>content-package</packaging>
-    <name>AEM Apps Custom Tile - Content</name>
-    <description>AEM Apps Custom Tile - Content Package</description>
+    <name>AEM Mobile Custom Dashboard - Content</name>
+    <description>AEM Mobile Custom Dashboard - Content Package</description>
 
     <properties>
         <crx.host>localhost</crx.host>
@@ -103,7 +103,7 @@
         <dependency>
             <groupId>com.adobe.aem</groupId>
             <artifactId>uber-jar</artifactId>
-            <version>6.1.0</version>
+            <version>6.2.0</version>
             <scope>provided</scope>
             <classifier>obfuscated-apis</classifier>
         </dependency>
