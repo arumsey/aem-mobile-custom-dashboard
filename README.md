@@ -1,6 +1,11 @@
 # AEM Mobile Dashboard Customizations
 
-This project provides serveral customizations that can be applied to the [AEM Mobile](https://aemmobile.adobe.com) Dashboard.
+Every mobile app has its own set of unique requirements. 
+The AEM Mobile dashboard is a powerful tool that can be leveraged in order to ensure every mobile app can
+be managed as efficiently as possible.
+
+This project provides serveral customizations that can be applied to an app's [AEM Mobile](https://aemmobile.adobe.com) Dashboard.
+
 
 ## Minimum requirements
 
@@ -17,9 +22,19 @@ This project provides serveral customizations that can be applied to the [AEM Mo
 The resourceType given to your mobile app instance drives the entire dashboard experience. Extending the
 core mobileapps resourceType provides a convenient way to alter existing dashboard functionality.
 
+Core Instance Type: `/libs/mobileapps/core/components/instance`
+PhoneGap Instance Type: `/libs/mobileapps/phonegap/components/instance`
+
 ### Catalog Card
 
+Each app instance component may override the default [card](content/jcr_root/apps/planetrumsey/mobileapps/components/instance/card.jsp) rendering used by the Catalog view. 
+
 ### App Details Dialog
+
+The [dialog](content/jcr_root/apps/planetrumsey/mobileapps/components/instance/_cq_dialog/.content.xml) used by the App Details view can be completely altered to meet an app's specific requirements. 
+You don't want to expose app store properties? Remove it! 
+You have specific meta data that needs to be stored with your app? Add a new dialog tab!
+The possibilities are endless.
 
 ### App Template
 
@@ -40,3 +55,9 @@ eg.
 
 ### Custom Tiles
 
+Now it is time to be creative. Dashboard tiles are meant to provide an immediate snapshot on the state of your app.
+How many pages are currently staged?
+Is the app part of a workflow?
+How many users does the app have?
+
+Any functionality your app requires can be represented by a tile to ensure it can be managed efficiently.

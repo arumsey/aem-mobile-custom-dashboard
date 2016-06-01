@@ -1,15 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="nt:unstructured">
     <content jcr:primaryType="nt:unstructured">
         <items jcr:primaryType="nt:unstructured">
             <tabs jcr:primaryType="nt:unstructured">
                 <items jcr:primaryType="nt:unstructured">
-                    <theme
+                    <basic jcr:primaryType="nt:unstructured">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column jcr:primaryType="nt:unstructured">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <downloaddev
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/anchorbutton"
+                                        block="{Boolean}true"
+                                        href="${requestPathInfo.suffix}.cli-dev.zip"
+                                        icon="download"
+                                        text="Download Development Source"
+                                        variant="quiet"/>
+                                    <downloadstage
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/anchorbutton"
+                                        block="{Boolean}true"
+                                        href="${requestPathInfo.suffix}.cli.zip"
+                                        icon="download"
+                                        text="Download Staging Source"
+                                        variant="quiet"/>
+                                </items>
+                            </column>
+                        </items>
+                    </basic>
+                    <plugins
                         jcr:primaryType="nt:unstructured"
-                        jcr:title="Theme"
+                        jcr:title="Plugins"
                         sling:resourceType="granite/ui/components/foundation/section"
-                        id="theme">
+                        id="plugins">
                         <layout
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
@@ -17,20 +41,23 @@
                         <items jcr:primaryType="nt:unstructured">
                             <column
                                 jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/foundation/container">
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
                                 <items jcr:primaryType="nt:unstructured">
-                                    <backgroundColor
+                                    <stylelist
+                                        granite:rel="custom-dashboard-plugins-pluginentries"
                                         jcr:primaryType="nt:unstructured"
-                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
-                                        fieldDescription=""
-                                        fieldLabel="Background Color"
-                                        name="theme/native/styles/bar/backgroundColor"
-                                        renderReadOnly="{Boolean}true"
-                                        showEmptyInReadOnly="false"/>
+                                        sling:resourceType="granite/ui/components/coral/foundation/accordion">
+                                        <granite:data jcr:primaryType="nt:unstructured"/>
+                                        <datasource
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="planetrumsey/mobileapps/gui/components/properties/plugins/pluginsdatasource"
+                                            itemResourceType="planetrumsey/mobileapps/gui/components/properties/plugins/pluginentry"
+                                            resource="${empty param.item ? requestPathInfo.suffix : param.item}"/>
+                                    </stylelist>
                                 </items>
                             </column>
                         </items>
-                    </theme>
+                    </plugins>
                 </items>
             </tabs>
         </items>
