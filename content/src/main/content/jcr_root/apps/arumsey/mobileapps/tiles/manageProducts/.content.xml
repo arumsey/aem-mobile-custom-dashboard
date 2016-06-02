@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        jcr:mixinTypes="[sling:Resource]"
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="mobileapps/gui/components/dashboard/tile"
+        class="cq-apps-CardDashboard-ManageProducts"
+        order="{Long}5">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="mobileapps/gui/components/dashboard/layouts/tile"/>
+        <header jcr:primaryType="nt:unstructured">
+            <title
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Manage Products"/>
+            <actions
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="mobileapps/gui/components/dashboard/tile/actions">
+                <items jcr:primaryType="nt:unstructured">
+                    <importfromcommerce
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/hyperlink"
+                        href="#displayImportFromCommerceModal"
+                        icon="icon-dataUpload"
+                        text="Import Product Data"
+                        title="Import Product Data"
+                        toggle="modal">
+                        <granite:rendercondition
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/renderconditions/and">
+                            <writepriviledge
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/renderconditions/privilege"
+                                path="${requestPathInfo.suffix}"
+                                privileges="[jcr:write]"/>
+                        </granite:rendercondition>
+                    </importfromcommerce>
+                </items>
+            </actions>
+        </header>
+        <body
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="arumsey/mobileapps/gui/components/dashboard/manageproducts/body">
+            <importfromcommercemodal
+                granite:class="foundation-form"
+                granite:id="displayImportFromCommerceModal"
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Import Product Data"
+                sling:resourceType="granite/ui/components/foundation/form"
+                action="${requestPathInfo.suffix}.wehealth.import.json"
+                enctype="multipart/form-data"
+                foundation-form-ajax="{Boolean}true"
+                method="POST">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/modal"
+                    closable="{Boolean}true"
+                    formStyle="vertical"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <container
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container"
+                        class="cq-apps-UploadData-form-body">
+                        <layout
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/layouts/container"/>
+                        <items jcr:primaryType="nt:unstructured">
+                            <instructions
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/text"
+                                class="cq-apps--block-text"
+                                text="Click 'Import' to Import the Product Data"/>
+                        </items>
+                    </container>
+                </items>
+                <footer jcr:primaryType="nt:unstructured">
+                    <cancel
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/button"
+                        dismiss="modal"
+                        text="Cancel"/>
+                    <create
+                        granite:class="foundation-validation-bind"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/submit"
+                        formId="displayImportFromCommerceModal"
+                        text="Import"
+                        variant="primary"/>
+                </footer>
+            </importfromcommercemodal>
+        </body>
+        <footer
+            jcr:primaryType="nt:unstructured"
+            href="/aem/products.html/etc/commerce/products"
+            target="products"/>
+    </jcr:content>
+</jcr:root>

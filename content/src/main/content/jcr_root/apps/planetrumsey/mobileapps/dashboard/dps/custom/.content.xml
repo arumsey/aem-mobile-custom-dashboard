@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
-    jcr:primaryType="sling:OrderedFolder"
-    tiles="[/apps/planetrumsey/mobileapps/tiles/import-data,/libs/mobileapps/dps/admin/content/dashboard/tiles/dpsdefault/banners,/libs/mobileapps/dps/admin/content/dashboard/tiles/dpsdefault/connection,/libs/mobileapps/dps/admin/content/dashboard/tiles/dpsdefault/info,/libs/mobileapps/dps/admin/content/dashboard/tiles/dpsdefault/articles,/libs/mobileapps/dps/admin/content/dashboard/tiles/dpsdefault/collections]"/>

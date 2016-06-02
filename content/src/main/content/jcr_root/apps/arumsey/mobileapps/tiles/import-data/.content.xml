@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        jcr:mixinTypes="[sling:Resource]"
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="mobileapps/gui/components/dashboard/tile"
+        class="custom-tile-CardDashboard-Upload"
+        order="{Long}5">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="mobileapps/gui/components/dashboard/layouts/tile"/>
+        <header jcr:primaryType="nt:unstructured">
+            <title
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Import Data"/>
+            <actions
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="mobileapps/gui/components/dashboard/tile/actions">
+                <items jcr:primaryType="nt:unstructured">
+                    <upload
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/hyperlink"
+                        href="#displayCSVUploadModal"
+                        icon="icon-upload"
+                        text="Upload Data"
+                        title="Upload Product Data"
+                        toggle="modal"/>
+                </items>
+            </actions>
+        </header>
+        <body
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="arumsey/mobileapps/gui/components/dashboard/uploaddata/body">
+            <uploaddatamodal
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Upload Data"
+                sling:resourceType="granite/ui/components/foundation/form"
+                action="/bin/upfile"
+                class="custom-tile-upload-form foundation-form"
+                enctype="multipart/form-data"
+                foundation-form-ajax="{Boolean}true"
+                id="displayCSVUploadModal"
+                method="POST">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/modal"
+                    closable="{Boolean}true"
+                    formStyle="vertical"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <container
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container"
+                        class="cq-apps-UploadData-form-body">
+                        <layout
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/layouts/container"/>
+                        <items jcr:primaryType="nt:unstructured">
+                            <instructions
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/text"
+                                class="cq-apps--block-text"
+                                text="Upload a CSV file for your mobile application."/>
+                            <fileupload
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                disabled="{Boolean}false"
+                                hideText="{Boolean}true"
+                                icon="icon-upload"
+                                mimeTypes="[application/vnd.ms-excel]"
+                                multiple="{Boolean}false"
+                                name="articledata"
+                                rel="cq-apps-UploadData-upload-activator"
+                                show-progress="{Boolean}true"
+                                sizeLimit="2147483648"
+                                title="Upload Product Data"
+                                uploadUrl="will_be_replaced"
+                                useHTML5="{Boolean}false"
+                                variant="[secondary,block]"/>
+                        </items>
+                    </container>
+                </items>
+                <footer jcr:primaryType="nt:unstructured">
+                    <cancel
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/button"
+                        dismiss="modal"
+                        text="Cancel"/>
+                    <create
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/form/submit"
+                        formId="displayCSVUploadModal"
+                        text="Upload"
+                        variant="primary"/>
+                </footer>
+            </uploaddatamodal>
+        </body>
+        <footer jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>
