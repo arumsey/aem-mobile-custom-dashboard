@@ -43,7 +43,7 @@
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/coral/foundation/container">
                                 <items jcr:primaryType="nt:unstructured">
-                                    <stylelist
+                                    <pluginlist
                                         granite:rel="custom-dashboard-plugins-pluginentries"
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/coral/foundation/accordion">
@@ -53,7 +53,7 @@
                                             sling:resourceType="arumsey/mobileapps/gui/components/properties/plugins/pluginsdatasource"
                                             itemResourceType="arumsey/mobileapps/gui/components/properties/plugins/pluginentry"
                                             resource="${empty param.item ? requestPathInfo.suffix : param.item}"/>
-                                    </stylelist>
+                                    </pluginlist>
                                 </items>
                             </column>
                         </items>

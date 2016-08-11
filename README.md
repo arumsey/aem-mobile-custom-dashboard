@@ -24,36 +24,38 @@ core mobileapps resourceType provides a convenient way to alter existing dashboa
 
 Core Instance Type: `/libs/mobileapps/core/components/instance`
 PhoneGap Instance Type: `/libs/mobileapps/phonegap/components/instance`
+Custom Instance Type: `/apps/arumsey/mobileapps/components/instance`
 
 ### Catalog Card
 
-Each app instance component may override the default [card](content/jcr_root/apps/planetrumsey/mobileapps/components/instance/card.jsp) rendering used by the Catalog view. 
+Each app instance component may override the default [card](content/jcr_root/apps/arumsey/mobileapps/components/instance/card.jsp) rendering used by the Catalog view. 
 
 ### App Details Dialog
 
-The [dialog](content/jcr_root/apps/planetrumsey/mobileapps/components/instance/_cq_dialog/.content.xml) used by the App Details view can be completely altered to meet an app's specific requirements. 
+The [dialog](content/jcr_root/apps/arumsey/mobileapps/components/instance/_cq_dialog/.content.xml) used by the App Details view can be completely altered to meet an app's specific requirements. 
 You don't want to expose app store properties? Remove it! 
 You have specific meta data that needs to be stored with your app? Add a new dialog tab!
 The possibilities are endless.
 
 ### App Template
 
-The [app template](content/jcr_root/apps/planetrumsey/mobileapps/templates/app-hybrid-custom) will allow any new app that is created to
+The [app template](content/jcr_root/apps/arumsey/mobileapps/templates/app-hybrid-custom) will allow any new app that is created to
 automatically obtain any desired dashboard customizations.
-
 
 ## Dashboard Configuration
 
-Each mobile app instance in AEM can specify its own dashboard tile configuration. The can include removing any default tiles as well as
+Each mobile app instance in AEM can specify its own dashboard tile configuration. This can include removing or replacing default tiles as well as
 adding new tiles. The `pge-dashboard-config` property needs to be added to the `jcr:content` of your app's instance node (ie. shell).
 
 eg.
 
-    /content/phonegap/geometrixx-outdoors/shell/jcr:content
-      + pge-dashboard-config = /apps/planetrumsey/mobileapps/dashboard/dps/custom 
+    /content/mobileapps/we-healthcare-tracker/shell/jcr:content
+      + pge-dashboard-config = /apps/arumsey/mobileapps/dashboard/custom 
 
+The dashboard configuration node can include new tile definitions as child nodes or specify a `tiles` multi-value property that includes links to 
+tile definitions.
 
-### Custom Tiles
+## Custom Tiles
 
 Now it is time to be creative. Dashboard tiles are meant to provide an immediate snapshot on the state of your app.
 How many pages are currently staged?
@@ -61,3 +63,60 @@ Is the app part of a workflow?
 How many users does the app have?
 
 Any functionality your app requires can be represented by a tile to ensure it can be managed efficiently.
+
+### Tile Definition
+
+Each [tile](content/jcr_root/apps/arumsey/mobileapps/tiles/content/.content.xml) is a `cq:Page` with a resourceType of `mobileapps/gui/components/dashboard/tile`. 
+Each tile needs to define a `layout`, `header`, `body` and `footer`
+child node.
+
+#### Layout
+
+No customizations should be required on this node but it is required in order for the entire tile to be rendered correctly in the dashboard.
+
+```
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="mobileapps/gui/components/dashboard/layouts/tile"/>
+```
+
+#### Header
+
+The header can contain a `title` and `actions`.
+
+```
+        <header jcr:primaryType="nt:unstructured">
+            <title
+                jcr:primaryType="nt:unstructured"
+                jcr:title=""/>
+            <actions
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="mobileapps/gui/components/dashboard/tile/actions">
+                <items jcr:primaryType="nt:unstructured">
+                ...
+                </items>
+            </actions>
+        </header>
+```
+
+#### Body
+
+The `body` node is generally where the bulk of the custom tile will be implemented. The `resourceType` of the body node should provide the full tile rendering.
+
+```
+        <body
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="">
+        </body>
+```
+
+#### Footer
+
+The `footer` of the tile definition provides the ability to request a new URL that the tile content is generally realted to. 
+This could be tohught of as an expanded view which the tile provides a snapshot to.
+
+```
+        <footer
+            jcr:primaryType="nt:unstructured"
+            href=""/>
+```
