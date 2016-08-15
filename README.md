@@ -6,6 +6,8 @@ be managed as efficiently as possible.
 
 This project provides serveral customizations that can be applied to an app's [AEM Mobile](https://aemmobile.adobe.com) Dashboard.
 
+The [AEM Mobile Hybrid Reference App](https://github.com/Adobe-Marketing-Cloud-Apps/aem-mobile-hybrid-reference) will be used for example
+purposes throughout this project but the customizations presented can be applied to any AEM Mobile app.
 
 ## Minimum requirements
 
@@ -16,7 +18,9 @@ This project provides serveral customizations that can be applied to an app's [A
 ## Install AEM Package
 
     mvn -PautoInstallPackage clean install
-    
+ 
+# Customizations
+
 ## Instance Resource Type
 
 The resourceType given to your mobile app instance drives the entire dashboard experience. Extending the
@@ -49,10 +53,10 @@ adding new tiles. The `pge-dashboard-config` property needs to be added to the `
 
 eg.
 
-    /content/mobileapps/we-healthcare-tracker/shell/jcr:content
+    /content/mobileapps/hybrid-reference-app/shell/jcr:content
       + pge-dashboard-config = /apps/arumsey/mobileapps/dashboard/custom 
 
-The dashboard configuration node can include new tile definitions as child nodes or specify a `tiles` multi-value property that includes links to 
+The dashboard configuration node can include new tile definitions as child nodes or specify a `tiles` multi-value property that includes paths to 
 tile definitions.
 
 ## Custom Tiles

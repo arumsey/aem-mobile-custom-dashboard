@@ -3,25 +3,28 @@
           import="com.adobe.cq.mobile.platform.MobileResource,
                   com.adobe.cq.mobile.platform.MobileResourceLocator,
                   com.adobe.cq.mobile.platform.MobileResourceType,
-                  com.adobe.granite.security.user.util.AuthorizableUtil,
                   com.adobe.granite.ui.components.AttrBuilder,
                   com.adobe.granite.xss.XSSAPI,
                   com.day.cq.commons.date.RelativeTimeFormat,
                   com.day.cq.commons.jcr.JcrConstants,
+                  com.day.cq.dam.api.Asset,
                   com.day.cq.wcm.api.Page,
                   com.day.jcr.vault.util.Text,
                   org.apache.commons.lang3.StringUtils,
                   org.apache.sling.api.resource.Resource,
                   org.apache.sling.api.resource.ValueMap,
                   org.slf4j.Logger,
+                  org.w3c.dom.Document,
+                  org.w3c.dom.Element,
+                  org.w3c.dom.NodeList,
                   javax.jcr.RepositoryException,
                   javax.jcr.Session,
                   javax.jcr.security.AccessControlManager,
                   javax.jcr.security.Privilege,
-                  java.util.ArrayList,
-                  java.util.Calendar,
-                  java.util.List,
-                  java.util.ResourceBundle, com.day.cq.wcm.mobile.api.MobileConstants, com.day.cq.dam.api.Asset, java.io.InputStream, org.w3c.dom.Document, javax.xml.parsers.DocumentBuilderFactory, javax.xml.parsers.DocumentBuilder, org.w3c.dom.Element, org.w3c.dom.NodeList"%><%
+                  javax.xml.parsers.DocumentBuilder,
+                  javax.xml.parsers.DocumentBuilderFactory,
+                  java.io.InputStream,
+                  java.util.ArrayList, java.util.Calendar, java.util.List, java.util.ResourceBundle"%><%
 
     Page pageResource = resource.adaptTo(Page.class);
 
