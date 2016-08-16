@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        jcr:mixinTypes="[sling:Resource]"
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="mobileapps/gui/components/dashboard/tile"
+        class="cq-apps-CardDashboard-AppDetails custom"
+        order="{Long}5">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="mobileapps/gui/components/dashboard/layouts/tile"/>
+        <header jcr:primaryType="nt:unstructured">
+            <title
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Manage App"/>
+        </header>
+        <body
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="mobileapps/gui/components/dashboard/tiles/info/body">
+            <thumbnail
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="mobileapps/gui/components/dashboard/tiles/info/thumbnail"
+                editable="{Boolean}false">
+                <items jcr:primaryType="nt:unstructured">
+                    <name
+                        jcr:primaryType="nt:unstructured"
+                        name="widget/name/text"/>
+                    <author
+                        jcr:primaryType="nt:unstructured"
+                        name="widget/author/text"/>
+                </items>
+            </thumbnail>
+            <metadata
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="mobileapps/gui/components/dashboard/tiles/info/metadata"/>
+        </body>
+        <footer
+            jcr:primaryType="nt:unstructured"
+            href="/libs/mobileapps/admin/content/dashboard/appdetails.html${requestPathInfo.suffix}"/>
+    </jcr:content>
+</jcr:root>

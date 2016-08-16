@@ -118,7 +118,7 @@
         </coral-card-property><%
         if (configDoc != null) {
             String targetIcon = "devices";
-            String targetDevice = getPreference(configDoc, "target-device").getAttribute("value");
+            String targetDevice = getPreference(configDoc, "target-device");
             if ("handset".equals(targetDevice)) {
                 targetIcon = "devicePhone";
             } else if ("tablet".equals(targetDevice)) {
@@ -261,14 +261,14 @@
         return null;
     }
 
-    public Element getPreference(Document doc, String name) {
+    public String getPreference(Document doc, String name) {
         NodeList nList = doc.getElementsByTagName("preference");
         for (int i = 0; i < nList.getLength(); i++) {
             org.w3c.dom.Node prefNode = nList.item(i);
             if (prefNode.getNodeType() == org.w3c.dom.Node.ELEMENT_NODE) {
                 Element eElement = (Element) prefNode;
                 if (eElement.getAttribute("name").equals(name)) {
-                    return eElement;
+                    return eElement.getAttribute("value");
                 }
             }
         }
