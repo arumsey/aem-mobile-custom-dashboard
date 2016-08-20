@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
     jcr:primaryType="sling:OrderedFolder"
-    tiles="[/libs/mobileapps/admin/content/dashboard/tiles/default/info,/apps/arumsey/mobileapps/tiles/content,/libs/mobileapps/admin/content/dashboard/tiles/default/updatepackages,/libs/mobileapps/admin/content/dashboard/tiles/default/pushnotifications,/libs/mobileapps/admin/content/dashboard/tiles/default/appmetrics,/libs/mobileapps/admin/content/dashboard/tiles/default/cloudservices]"/>
+    tiles="[/apps/arumsey/mobileapps/tiles/info,/apps/arumsey/mobileapps/tiles/content,/libs/mobileapps/admin/content/dashboard/tiles/default/updatepackages,/libs/mobileapps/admin/content/dashboard/tiles/default/pushnotifications,/libs/mobileapps/admin/content/dashboard/tiles/default/appmetrics,/libs/mobileapps/admin/content/dashboard/tiles/default/cloudservices]"/>

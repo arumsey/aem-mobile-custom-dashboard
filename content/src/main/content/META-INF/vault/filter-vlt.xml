@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/apps/arumsey/mobileapps"/>
+
+    <filter root="/libs/foundation/global.jsp"/>
+    <filter root="/libs/mobileapps/gui/components/mostrecentlymodified/mostrecentlymodified.jsp"/>
+</workspaceFilter>

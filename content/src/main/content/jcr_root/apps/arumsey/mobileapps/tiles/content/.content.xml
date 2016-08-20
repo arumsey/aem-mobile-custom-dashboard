@@ -5,8 +5,8 @@
         jcr:mixinTypes="[sling:Resource]"
         jcr:primaryType="nt:unstructured"
         sling:resourceType="mobileapps/gui/components/dashboard/tile"
-        class="cq-apps-CardDashboard-Content"
-        colspan="2"
+        class="cq-apps-CardDashboard-Content custom"
+        colspan="1"
         order="{Long}40">
         <layout
             jcr:primaryType="nt:unstructured"
@@ -18,14 +18,12 @@
         </header>
         <body
             jcr:primaryType="nt:unstructured"
-            sling:resourceType="mobileapps/gui/components/dashboard/tiles/content/body"
-            maxBodyTableRows="5">
+            sling:resourceType="arumsey/mobileapps/gui/components/dashboard/content/body"
+            feedPath="${requestPathInfo.suffix}">
             <datasource
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="mobileapps/gui/components/datasources/contentdatasource"
                 appPath="${requestPathInfo.suffix}"
-                limit="${empty requestPathInfo.selectors[1] ? &quot;150&quot; : requestPathInfo.selectors[1]}"
-                offset="${requestPathInfo.selectors[0]}"
                 pgeTypes="[assets,app-content]"/>
         </body>
         <footer
