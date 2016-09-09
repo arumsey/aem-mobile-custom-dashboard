@@ -12,6 +12,12 @@ This project provides serveral customizations that can be applied to an app's [A
 
 The [AEM Mobile Hybrid Reference App](https://github.com/Adobe-Marketing-Cloud-Apps/aem-mobile-hybrid-reference) will be used for example purposes throughout this project but the customizations presented can be applied to any AEM Mobile app.
 
+## Presentations
+
+AEM Mobile dashboard customizations has been presented at the following events.
+
+- [EVOLVE](http://evolve.3sharecorp.com/): Do You Want to Build a Dashboard?  (Aug. 30, 2016) ([slides](http://www.slideshare.net/arumsey/do-you-want-to-build-a-dashboard) )
+
 ## Minimum requirements
 
 1. Maven (tested: Apache Maven `3.2.2`)
