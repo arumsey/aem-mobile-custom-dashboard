@@ -14,7 +14,7 @@
         <header jcr:primaryType="nt:unstructured">
             <title
                 jcr:primaryType="nt:unstructured"
-                jcr:title="Content"/>
+                jcr:title="Manage Content"/>
         </header>
         <body
             jcr:primaryType="nt:unstructured"
